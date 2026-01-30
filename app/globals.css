@@ -6,3 +6,14 @@ body {
   color: white;
   overflow: hidden;
 }
+body.lofi {
+  background: radial-gradient(circle, #1e293b, #020617);
+}
+
+body.neon {
+  background: radial-gradient(circle, #020617, #000000);
+}
+
+body.nature {
+  background: radial-gradient(circle, #14532d, #052e16);
+}

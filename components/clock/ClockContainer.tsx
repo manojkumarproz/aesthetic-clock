@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import ThemeToggle from "../theme/ThemeToggle";
+import AmbientPlayer from "../audio/AmbientPlayer";
+import Particles from "../effects/Particles";
+import TopBar from "../ui/TopBar";
+import ToggleButton from "../ui/ToggleButton";
 import AnalogClock from "./AnalogClock";
 import DigitalClock from "./DigitalClock";
-import ToggleButton from "../ui/ToggleButton";
-import TopBar from "../ui/TopBar";
+import { useState } from "react";
 
 export default function ClockContainer() {
   const [mode, setMode] = useState<"analog" | "digital">("analog");
@@ -12,17 +15,14 @@ export default function ClockContainer() {
   return (
     <div className="w-full h-screen flex items-center justify-center">
 
+      <Particles />
+
       <TopBar>
-        <ToggleButton 
-          label="Analog" 
-          active={mode === "analog"} 
-          onClick={() => setMode("analog")} 
-        />
-        <ToggleButton 
-          label="Digital" 
-          active={mode === "digital"} 
-          onClick={() => setMode("digital")} 
-        />
+        <ToggleButton label="Analog" active={mode === "analog"} onClick={() => setMode("analog")} />
+        <ToggleButton label="Digital" active={mode === "digital"} onClick={() => setMode("digital")} />
+
+        <ThemeToggle />
+        <AmbientPlayer />
       </TopBar>
 
       {mode === "analog" ? <AnalogClock /> : <DigitalClock />}
