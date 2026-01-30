@@ -8,6 +8,7 @@ import ToggleButton from "../ui/ToggleButton";
 import AnalogClock from "./AnalogClock";
 import DigitalClock from "./DigitalClock";
 import { useState } from "react";
+import AdBanner from "../ads/AdBanner";
 
 export default function ClockContainer() {
   const [mode, setMode] = useState<"analog" | "digital">("analog");
@@ -26,6 +27,8 @@ export default function ClockContainer() {
       </TopBar>
 
       {mode === "analog" ? <AnalogClock /> : <DigitalClock />}
+
+      <AdBanner />
     </div>
   );
 }
