@@ -4,8 +4,17 @@ import { useEffect } from "react";
 export default function Particles() {
   useEffect(() => {
     const canvas = document.getElementById("particles") as HTMLCanvasElement;
+    if (!canvas) return;
+
     const ctx = canvas.getContext("2d")!;
-    let particles: any[] = [];
+    interface Particle {
+      x: number;
+      y: number;
+      r: number;
+      s: number;
+    }
+    let particles: Particle[] = [];
+    let animationField: number;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -30,11 +39,15 @@ export default function Particles() {
         ctx.fillStyle = "rgba(255,255,255,0.5)";
         ctx.fill();
       });
-      requestAnimationFrame(animate);
+      animationField = requestAnimationFrame(animate);
     }
 
     animate();
+
+    return () => {
+      cancelAnimationFrame(animationField);
+    };
   }, []);
 
-  return <canvas id="particles" className="fixed inset-0 -z-10" />;
+  return <canvas id="particles" className="fixed inset-0 -z-10 pointer-events-none" />;
 }

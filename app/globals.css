@@ -1,19 +1,31 @@
 @import "tailwindcss";
+
 body {
   margin: 0;
   font-family: Poppins, system-ui, -apple-system;
-  background: radial-gradient(circle at top, #1e293b, #020617);
+  background: #020617;
   color: white;
   overflow: hidden;
+  --bg-fallback: #020617;
 }
+
 body.lofi {
-  background: radial-gradient(circle, #1e293b, #020617);
+  background: radial-gradient(circle at center, #1e293b, #020617);
+  --accent: #38bdf8;
+  --clock-bg: rgba(255, 255, 255, 0.05);
+  --bg-fallback: #020617;
 }
 
 body.neon {
-  background: radial-gradient(circle, #020617, #000000);
+  background: radial-gradient(circle at center, #2e1065, #020617, #000000);
+  --accent: #f0abfc;
+  --clock-bg: rgba(240, 171, 252, 0.05);
+  --bg-fallback: #000000;
 }
 
 body.nature {
-  background: radial-gradient(circle, #14532d, #052e16);
+  background: radial-gradient(circle at center, #064e3b, #022c22, #052e16);
+  --accent: #4ade80;
+  --clock-bg: rgba(74, 222, 128, 0.05);
+  --bg-fallback: #052e16;
 }

@@ -11,12 +11,9 @@ export default function ThemeToggle() {
       {themes.map(t => (
         <button
           key={t}
-          onClick={() => {
-            document.body.className = t;
-            setTheme(t);
-          }}
-          className={`px-4 py-1 rounded-full text-sm backdrop-blur border
-          ${theme === t ? "bg-white/30" : "bg-white/10 hover:bg-white/20"}`}
+          onClick={() => setTheme(t)}
+          className={`px-4 py-1 rounded-full text-sm backdrop-blur border transition-all
+          ${theme === t ? "bg-white/30 border-white/50" : "bg-white/10 border-white/20 hover:bg-white/20"}`}
         >
           {t.toUpperCase()}
         </button>

@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect } from "react";
 
 export default function AdBanner() {
@@ -11,11 +10,11 @@ export default function AdBanner() {
   }, []);
 
   return (
-    <div className="fixed bottom-3 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-md z-50">
+    <div className="fixed bottom-3 left-1/2 -translate-x-1/2 bg-black/40 backdrop-blur px-4 py-2 rounded-xl border border-white/10 z-50">
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
-        data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+        data-ad-client="ca-pub-XXXXXXXXXXXX"
         data-ad-slot="XXXXXXXXXX"
         data-ad-format="auto"
         data-full-width-responsive="true"
