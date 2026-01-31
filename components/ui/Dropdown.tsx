@@ -1,11 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-
-type Option = {
-    label: string;
-    value: string;
-};
+import { Option } from "@/types";
 
 type DropdownProps = {
     label: string;

@@ -28,9 +28,11 @@ export default function AmbientPlayer() {
 
       <button
         onClick={toggle}
-        className="px-4 py-1 rounded-full bg-white/10 backdrop-blur border hover:bg-white/20"
+        className={`px-4 py-1.5 rounded-full border transition-all text-sm flex items-center gap-2
+          ${playing ? "bg-cyan-500/20 border-cyan-500/50 text-cyan-200" : "bg-white/5 border-white/10 text-white/50 hover:bg-white/10 hover:text-white"}`}
       >
-        {playing ? "🔇 Mute" : "🎧 Ambient"}
+        <span className="text-lg">{playing ? "🔇" : "🎧"}</span>
+        <span className="font-medium uppercase tracking-wider text-[10px]">{playing ? "Playing" : "Ambient"}</span>
       </button>
     </div>
   );

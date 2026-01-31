@@ -50,10 +50,11 @@ export default function MusicReactive() {
   return (
     <button
       onClick={() => setEnabled(!enabled)}
-      className={`px-4 py-1 rounded-full backdrop-blur border transition-all 
-        ${enabled ? "bg-sky-400/30 border-sky-400" : "bg-white/10 border-white/20 hover:bg-white/20"}`}
+      className={`px-4 py-1.5 rounded-full border transition-all text-sm flex items-center gap-2
+        ${enabled ? "bg-pink-500/20 border-pink-500/50 text-pink-200" : "bg-white/5 border-white/10 text-white/50 hover:bg-white/10 hover:text-white"}`}
     >
-      🎵 {enabled ? "Music Active" : "Music Mode"}
+      <span className="text-lg">{enabled ? "⚡" : "🎵"}</span>
+      <span className="font-medium uppercase tracking-wider text-[10px]">{enabled ? "Reactive" : "Visuals"}</span>
     </button>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useClock } from "@/hooks/useClock";
-import { ClockStyle } from "./AnalogClock";
+import { ClockStyle } from "@/types";
 
 export default function DigitalClock({ style = "modern" }: { style?: ClockStyle }) {
   const time = useClock();

@@ -1,8 +1,7 @@
 "use client";
 
 import { createContext, useState, ReactNode, useEffect } from "react";
-
-export type Theme = "lofi" | "neon" | "nature";
+import { Theme } from "@/types";
 
 type ThemeContextType = {
   theme: Theme;
