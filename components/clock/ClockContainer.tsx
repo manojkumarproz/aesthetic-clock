@@ -11,6 +11,7 @@ import DigitalClock from "./DigitalClock";
 import { useTheme } from "@/hooks/useTheme";
 import Dropdown from "../ui/Dropdown";
 import AdSlot from "../ads/AdSlot";
+import SudokuGame from "../sudoku/SudokuGame";
 import { ClockMode, ClockStyle, WeatherMode, Theme } from "@/types";
 
 export default function ClockContainer() {
@@ -114,9 +115,27 @@ export default function ClockContainer() {
       </TopBar>
 
       {/* Main Clock Stage */}
-      <main className="z-0 scale-90 md:scale-100 transition-transform duration-700">
-        {mode === "analog" ? <AnalogClock style={clockStyle} /> : <DigitalClock style={clockStyle} />}
-      </main>
+      <main className="z-0 w-full max-w-7xl mx-auto
+                 flex flex-col md:flex-row
+                 items-center justify-center
+                 gap-10 scale-90 md:scale-100
+                 transition-transform duration-700">
+
+  {/* Clock */}
+  <div className="flex-1 flex justify-center">
+    {mode === "analog"
+      ? <AnalogClock style={clockStyle} />
+      : <DigitalClock style={clockStyle}
+    />}
+  </div>
+
+  {/* Sudoku */}
+  <div className="flex-1 flex justify-center">
+    <SudokuGame />
+  </div>
+
+</main>
+
     </div>
   );
 }
